@@ -13,6 +13,13 @@ namespace MoshVidly
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes(); //enablin gthe attribute routes
+            routes.MapRoute(
+                "MoviesByReleaseDate",
+                "Movies/Released/{year}/{date}",
+                new { Controller = "Movies", Action = "ByReleasedDate" }
+                
+                );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
