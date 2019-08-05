@@ -1,4 +1,5 @@
 ﻿@model MoshVidly.ViewModels.RandomMovieViewModel
+
 @{
     ViewBag.Title = "Random";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,5 +7,26 @@
 
 @*render the name of the movie as model movie is passed to the controller*@
 
-<h2>@Model.Movie.Name</h2> 
+<h2>@Model.Movie.Name</h2>
+@{
+    var className = Model.Customers.Count > 11 ? "Popular" : "";
+}
+@if (Model.Customers.Count == 0)
+{
+    <text> there are no items in the list</text>
+}
+else
+{
+    <ul>
+        @foreach (MoshVidly.Models.Customer cust in Model.Customers)
+        {
+
+            @*<li class="@className">@cust.Id</li>*@
+            <li class="@className">@cust.Name</li>
+
+
+        }
+    </ul>
+}
+
 

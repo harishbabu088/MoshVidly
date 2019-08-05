@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.Popular {
+    font-size: 16px;
+    background-color: aqua;
+    color: red;
+    font-weight: bold;
+}

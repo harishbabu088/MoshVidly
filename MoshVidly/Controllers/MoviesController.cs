@@ -22,11 +22,14 @@ namespace MoshVidly.Controllers
             {
                 //Movie = movie, //initialize the viewModles
                 //Customers = customers
-                Movie = new Movie() { Name = "Bahubali!" }, //initialize the viewModles
+                Movie = new Movie {
+                    Id = 1,
+                    Name = "Bahubali!"
+                }, //initialize the viewModles
                 Customers = new List<Customer>
                 {
-                        new Customer { Name = "Customer 1" }, // this is object initialization syntax creating 2 objects
-                        new Customer { Name = "Customer 2" }
+                        new Customer { Id=1,Name = "Johns Smith" }, // this is object initialization syntax creating 2 objects
+                        new Customer { Id=2,Name = "Mary Williams" }
                 }
             };
             return View(viewModel);
@@ -47,6 +50,18 @@ namespace MoshVidly.Controllers
            
             
             return Content(String.Format("Age={0}&Sex={1}",age,sex));
+        }
+        public ActionResult Customers()
+        {
+
+
+            return View();
+        }
+        public ActionResult Movies()
+        {
+
+
+            return View();
         }
     }
 }
